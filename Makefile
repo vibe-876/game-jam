@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-g -O0 -lncurses
+CFLAGS=-g -O0 -lncurses -Wall -Wextra -Wshadow -Wunreachable-code
 COBJS=misc.o screens.o mission_one.o
 COUT=tax_evasion_over_telnet
 

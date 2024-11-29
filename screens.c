@@ -13,19 +13,20 @@ void title_screen() {
   char quit_msg[] = "[q] => quit";
   
   initscr();
-  getmaxyx(stdscr, row, col);
-
   while(1) {
+    getmaxyx(stdscr, row, col);
+    row = (row / 2) - 5;
     clear();
     
     attron(A_BOLD);
-    mvprintw(row / 2, (col - strlen(title_msg)) / 2, "%s", title_msg);
+    mvprintw(row, (col - strlen(title_msg)) / 2, "%s", title_msg);
     attroff(A_BOLD);
 
-    mvprintw((row / 2) + 2, (col - strlen(play_msg)) / 2, "%s", play_msg);
-    mvprintw((row / 2) + 3, (col - strlen(play_msg)) / 2, "%s", tutorial_msg);
-    mvprintw((row / 2) + 4, (col - strlen(play_msg)) / 2, "%s", credits_msg);
-    mvprintw((row / 2) + 5, (col - strlen(play_msg)) / 2, "%s", quit_msg);
+    col = (col - strlen(play_msg)) / 2;
+    mvprintw(row + 2, col, "%s", play_msg);
+    mvprintw(row + 3, col, "%s", tutorial_msg);
+    mvprintw(row + 4, col, "%s", credits_msg);
+    mvprintw(row + 5, col, "%s", quit_msg);
   
     noecho();
     switch(mode = getch()) {
@@ -62,7 +63,7 @@ void credits() {
   clear();
 
   getmaxyx(stdscr, row, col);
-  row /= 2;
+  row = (row / 2) - 5;
   col = (col - strlen(credits_msg)) / 2;
   
   attron(A_BOLD);

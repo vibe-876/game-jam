@@ -4,6 +4,12 @@
 
 
 int launch_one() {
+  one_intro();
+  
+  return(0);
+}
+
+void one_intro() {
   clear();
   game_message("A University student slowly scrolls through his phone, gazing upon his stocks.", -10);
   game_message("His long green hair hangs elegantly, as he rests his cowboy boots on the table.", -9);
@@ -12,5 +18,4 @@ int launch_one() {
   game_message("This is the story of his great escape.", -5);
   
   getch();
-  return(0);
 }

@@ -41,7 +41,7 @@ void title_screen() {
       break;
       
     case 'p':
-      fullscreen_message("starting game...", -5);
+      launch_one();
       break;
       
     case 'q':

@@ -29,20 +29,27 @@ void title_screen() {
   
     switch(mode = getch()) {
     case 'c':
-      credits();
+      clear();
+  
+      game_message("Game developers:", -5);
+      game_message("Cam & Ross.", -4);
+
+      game_message("And a special thanks to:", -2);
+      game_message("Coffee, for giving us energy.", -1);
+      
+      getch();
       break;
       
     case 'p':
-      mvprintw(0, 0, "starting game...");
-      getch();
+      fullscreen_message("starting game...", -5);
       break;
       
     case 'q':
       goto exit;
       
     case 't':
-      mvprintw(0, 0, "launching tutorial...");
-      getch();
+      fullscreen_message("launching tutorial...", -5);
+      break;
       
     default:
       break;
@@ -51,15 +58,4 @@ void title_screen() {
   
   refresh();
   return;
-}
-
-void credits() {
-  clear();
-  
-  game_message("Game developers:", -5);
-  game_message("Cam & Ross.", -4);
-
-  game_message("And a special thanks to:", -2);
-  game_message("Coffee, for giving us energy.", -1);
-  getch();
 }

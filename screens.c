@@ -14,32 +14,38 @@ void title_screen() {
   initscr();
   getmaxyx(stdscr, row, col);
 
-  attron(A_BOLD);
-  mvprintw(row / 2, (col - strlen(title_msg)) / 2,
-	   "%s", title_msg);
-  attroff(A_BOLD);
+  while(1) {
+    attron(A_BOLD);
+    mvprintw(row / 2, (col - strlen(title_msg)) / 2, "%s", title_msg);
+    attroff(A_BOLD);
 
-  mvprintw((row / 2) + 2, (col - strlen(play_msg)) / 2,
-	   "%s", play_msg);
-  mvprintw((row / 2) + 3, (col - strlen(play_msg)) / 2,
-	   "%s", tutorial_msg);
-  mvprintw((row / 2) + 4, (col - strlen(play_msg)) / 2,
-	   "%s", credits_msg);
-  mvprintw((row / 2) + 5, (col - strlen(play_msg)) / 2,
-	   "%s", quit_msg);
+    mvprintw((row / 2) + 2, (col - strlen(play_msg)) / 2, "%s", play_msg);
+    mvprintw((row / 2) + 3, (col - strlen(play_msg)) / 2, "%s", tutorial_msg);
+    mvprintw((row / 2) + 4, (col - strlen(play_msg)) / 2, "%s", credits_msg);
+    mvprintw((row / 2) + 5, (col - strlen(play_msg)) / 2, "%s", quit_msg);
   
-
-  noecho();
-  switch(mode = getch()) {
-  case 'q':
-    goto exit;
-  default:
-    break;
-  }
+    noecho();
+    switch(mode = getch()) {
+    case 'c':
+      mvprintw(0, 0, "Cam & Ross.");
+      break;
+      
+    case 'p':
+      mvprintw(0, 0, "starting game...");
+      break;
+      
+    case 'q':
+      goto exit;
+      
+    case 't':
+      mvprintw(0, 0, "launching tutorial...");
+      
+    default:
+      break;
+    }
+  } exit:
   
- exit:
   refresh();
-  getch();
   endwin();
   return;
 }

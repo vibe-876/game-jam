@@ -6,6 +6,7 @@
 int launch_one() {
   one_intro();
   
+  
   return(0);
 }
 
@@ -18,4 +19,5 @@ void one_intro() {
   game_message("This is the story of his great escape.", -5);
   
   getch();
+  clear();
 }

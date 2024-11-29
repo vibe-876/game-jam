@@ -1,7 +1,7 @@
 CC=gcc
-CFLAGS=-g -O0
+CFLAGS=-g -O0 -lncurses
 CMAIN=main.c
-COUT=main
+COUT=tax_evasion_over_telnet
 CFILES=$(CMAIN) main.h
 
 

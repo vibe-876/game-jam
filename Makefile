@@ -1,13 +1,15 @@
 CC=gcc
 CFLAGS=-g -O0 -lncurses
-CMAIN=main.c
 COUT=tax_evasion_over_telnet
-CFILES=$(CMAIN) main.h
+CFILES=main.c main.h screens.c
+COBJS=screens.o
 
 
-default: $(CFILES)
-	$(CC) $(CFLAGS) -o $(COUT) $(CMAIN)
+default: $(COBJS)
+	$(CC) $(CFLAGS) -o $(COUT) main.c $(COBJS)
 
+screens.o: screens.c
+	$(CC) $(CFLAGS) -c $^
 
 clean:
-	rm $(COUT)
+	rm $(COUT) $(COBJS)

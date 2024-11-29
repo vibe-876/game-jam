@@ -50,7 +50,6 @@ void title_screen() {
   } exit:
   
   refresh();
-  endwin();
   return;
 }
 

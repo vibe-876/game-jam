@@ -9,5 +9,6 @@ int main(int argc, char **argv) {
   
   title_screen();
 
+  endwin();
   return(0);
 }

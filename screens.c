@@ -1,3 +1,4 @@
+#include "main.h"
 #include <ncurses.h>
 #include <string.h>
 
@@ -15,6 +16,8 @@ void title_screen() {
   getmaxyx(stdscr, row, col);
 
   while(1) {
+    clear();
+    
     attron(A_BOLD);
     mvprintw(row / 2, (col - strlen(title_msg)) / 2, "%s", title_msg);
     attroff(A_BOLD);
@@ -27,11 +30,12 @@ void title_screen() {
     noecho();
     switch(mode = getch()) {
     case 'c':
-      mvprintw(0, 0, "Cam & Ross.");
+      credits();
       break;
       
     case 'p':
       mvprintw(0, 0, "starting game...");
+      getch();
       break;
       
     case 'q':
@@ -39,6 +43,7 @@ void title_screen() {
       
     case 't':
       mvprintw(0, 0, "launching tutorial...");
+      getch();
       
     default:
       break;
@@ -48,4 +53,22 @@ void title_screen() {
   refresh();
   endwin();
   return;
+}
+
+void credits() {
+  int row, col;
+  char credits_msg[] = "Game developers:";
+  
+  clear();
+
+  getmaxyx(stdscr, row, col);
+  row /= 2;
+  col = (col - strlen(credits_msg)) / 2;
+  
+  attron(A_BOLD);
+  mvprintw(row, col, "%s", credits_msg);
+  attroff(A_BOLD);
+  
+  mvprintw(row + 1, col, "Cam & Ross.");
+  getch();
 }

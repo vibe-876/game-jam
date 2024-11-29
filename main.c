@@ -11,13 +11,19 @@ int main(int argc, char **argv) {
 
 void title_screen() {
   int row, col;
-  char message[] = "Tax Evasion Over Telnet!";
+  char title[] = "Tax Evasion Over Telnet!";
+  char pak[] = "(press any key)";
   
   initscr();
   getmaxyx(stdscr, row, col);
 
-  mvprintw(row / 2, (col - strlen(message)) / 2,
-	   "%s", message);
+  attron(A_BOLD);
+  mvprintw(row / 2, (col - strlen(title)) / 2,
+	   "%s", title);
+  attroff(A_BOLD);
+  
+  mvprintw((row / 2) + 1, (col - strlen(title)) / 2,
+	   "%s", pak);
 
   refresh();
   getch();

@@ -1,3 +1,4 @@
+#include "main.h"
 #include <ncurses.h>
 #include <string.h>
 

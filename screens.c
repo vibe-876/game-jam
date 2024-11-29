@@ -11,8 +11,7 @@ void title_screen() {
   char tutorial_msg[] = "[t] => play tutorial";
   char credits_msg[] = "[c] => show credits";
   char quit_msg[] = "[q] => quit";
-  
-  initscr();
+    
   while(1) {
     getmaxyx(stdscr, row, col);
     row = (row / 2) - 5;
@@ -28,7 +27,6 @@ void title_screen() {
     mvprintw(row + 4, col, "%s", credits_msg);
     mvprintw(row + 5, col, "%s", quit_msg);
   
-    noecho();
     switch(mode = getch()) {
     case 'c':
       credits();
@@ -57,19 +55,12 @@ void title_screen() {
 }
 
 void credits() {
-  int row, col;
-  char credits_msg[] = "Game developers:";
-  
   clear();
+  
+  game_message("Game developers:", -5);
+  game_message("Cam & Ross.", -4);
 
-  getmaxyx(stdscr, row, col);
-  row = (row / 2) - 5;
-  col = (col - strlen(credits_msg)) / 2;
-  
-  attron(A_BOLD);
-  mvprintw(row, col, "%s", credits_msg);
-  attroff(A_BOLD);
-  
-  mvprintw(row + 1, col, "Cam & Ross.");
+  game_message("And a special thanks to:", -2);
+  game_message("Coffee, for giving us energy.", -1);
   getch();
 }

@@ -4,6 +4,9 @@
 
 
 int main(int argc, char **argv) {
+  initscr();
+  noecho();
+  
   title_screen();
 
   return(0);

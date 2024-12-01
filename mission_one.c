@@ -91,8 +91,7 @@ void shop_scene_one(character *person) {
       
     case 's':
       clear();
-      game_message("You sold some gold.", -2);
-      getch();
+      sell_gold(person);
       break;
 
     case 'l':

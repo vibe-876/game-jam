@@ -42,7 +42,16 @@ game\_img takes some filename, and just writes it to the screen, starting at off
 ## Money Functions
 In character.h and character.c files.
 
-The only one so far is doTax, which takes a pointer to some character as its only argument. It deducts taxes from the character. For example, taking the taxes from someone called coffee would be done as
+People are implemented by the person_struct structure, which is typedef-ed to person for convince -- the implementation is shown below.
+``` c
+typedef struct character_struct {
+  unsigned long gold; /* in grams */
+  unsigned long liquid; /* ie, your liquid cash */
+  unsigned char tax; /* Tax percent, no point in >1 byte */
+} character;
+```
+
+The only function so far is doTax, which takes a pointer to some character as its only argument. It deducts taxes from the character. For example, taking the taxes from someone called coffee would be done as
 ``` c
 person *coffee = malloc(sizeof(person));
 // Give coffee their values here.

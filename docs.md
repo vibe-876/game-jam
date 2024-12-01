@@ -22,7 +22,7 @@ The offset just affects what line the first element of the list is printed onto.
 
 Because C, you should probably define the list first, like below:
 ``` c
-char *option_msg[] = {"[a] => do thing a", "[b] => do thing b", [c] => you get the idea", 0x0}
+char *option_msg[] = {"[a] => do thing a", "[b] => do thing b", "[c] => you get the idea", 0x0}
 /* Starting the first line on the sixth
  * line from the middle.
  */

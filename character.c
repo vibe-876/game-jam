@@ -36,3 +36,30 @@ void sell_gold(character *person) {
     person->liquid += to_sell * GOLD_VALUE;
   }
 }
+
+void buy_gold(character *person) {
+  if(person == 0x0) return;
+  
+  unsigned long to_buy;
+  char stuff_to_buy[128];
+  char liquid[128];
+  char *end_ptr = 0x0;
+
+  sprintf(liquid, "%ld", person->liquid);
+  
+  clear();
+  game_message("How much gold would you like to buy? You have", -4);
+  game_message(liquid, -3);
+  game_message("quid.", -2);
+  game_message("(enter number, end with newline)", 0);
+
+  getstr(stuff_to_buy);
+  to_buy = strtol(stuff_to_buy, &end_ptr, 10);
+
+  if(to_buy > person->liquid * GOLD_VALUE)
+    game_message("That costs more than you have...", 2);
+  else {
+    person->liquid -= to_buy * GOLD_VALUE;
+    person->gold += to_buy;
+  }
+}

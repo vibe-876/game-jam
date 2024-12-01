@@ -39,7 +39,12 @@ void title_screen() {
       goto exit;
       
     case 't':
-      fullscreen_message("tutorial not implemented yet :( .", -5);
+      clear();
+      game_message("If you want to leave at any time, just press C-c.", -4);
+      game_message("(If you don't know what that means, read the emacs docs)", -3);
+
+      game_message("If the screen stay on a single thing without any options, just whack a random key.", -1);
+      getch();
       
       break;
       

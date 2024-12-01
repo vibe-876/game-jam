@@ -13,6 +13,11 @@ int launch_one() {
 
 void one_intro() {
   clear();
+  attron(A_BOLD);
+  game_message("Episode One: Escape from Taxland", -6);
+  attroff(A_BOLD);
+  getch();
+  
   game_message("A University student slowly scrolls through his phone, gazing upon his stocks.", -10);
   game_message("His long green hair hangs elegantly, as he rests his cowboy boots on the table.", -9);
 

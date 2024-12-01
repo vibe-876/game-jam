@@ -1,4 +1,5 @@
 #include "main.h"
+#include "missions.h"
 #include <ncurses.h>
 #include <string.h>
 
@@ -8,6 +9,7 @@ int launch_one() {
   scene_one();
   return(0);
 }
+
 
 void one_intro() {
   clear();

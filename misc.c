@@ -5,11 +5,6 @@
 #include <errno.h>
 
 
-#define option_maker(name) \
-  char name[2]; \
-  name[1] = 0x0;
-
-
 void game_message(char *message, signed int line) {
   int row, col;
   getmaxyx(stdscr, row, col);

@@ -45,6 +45,8 @@ void title_screen() {
       game_message("(If you don't know what that means, read the emacs docs)", -3);
 
       game_message("If the screen stay on a single thing without any options, just whack a random key.", -1);
+
+      game_message("Regrettably, the telnet part of Tax Evasion Over Telnet doesn't work, but who actually cares lol.", -3);
       getch();
       
       break;

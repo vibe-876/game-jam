@@ -45,8 +45,10 @@ void scene_one(character *person) {
 
     switch(game_options(options, 0)) {
     case 'b':
-      game_message("If only you had some money to do so.", -10);
-      game_message("Unfortunately, all of the money that you couldn't spend on gold has gone to the university, because cost of living crisis or something.", -9);
+      no_money:
+      clear();
+      game_message("If only you had some money to do so.", -4);
+      game_message("Unfortunately, all of the money that you couldn't spend on gold has gone to the university, because cost of living crisis or something.", -3);
       getch();
       break;
 
@@ -61,11 +63,7 @@ void scene_one(character *person) {
       break;
 
     case 'w':
-      clear();
-      game_message("You buy a gun.", -2);
-      getch();
-      break;
-
+      goto no_money;
     default:
     }
   }

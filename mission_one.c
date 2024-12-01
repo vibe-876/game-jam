@@ -24,7 +24,7 @@ void one_intro() {
   game_message("But before long, it hits him -- with all of the money he's been making, the tax-man is sure to he hot on his tail...", -6);
   game_message("This is the story of his great escape.", -5);
 
-  game_img("img/test-person");
+  game_img("img/test-person", 10);
   
   getch();
   clear();

@@ -36,14 +36,7 @@ char game_options(char **options, signed int offset) {
   return(getch());
 }
 
-/* I should probably add an additional argument
- * to change the row the "image" starts in.
- *
- * I might do that later, or I might sleep, who
- * knows.
- */
-int game_img(char *filename) {
-  int offset = 10;
+int game_img(char *filename, signed int offset) {
   char art_line[64];
   FILE *art;
   

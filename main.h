@@ -1,7 +1,9 @@
-#include "character.h"
-#include "missions.h"
-
 void title_screen();
+
+/* liquid to gold ratio, used in selling and buying
+ * functions.
+ */
+#define GOLD_VALUE 5
 
 void game_message(char *message, signed int line);
 void fullscreen_message(char *message, signed int line);

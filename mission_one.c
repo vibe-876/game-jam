@@ -1,5 +1,4 @@
 #include "main.h"
-#include "missions.h"
 #include <stdlib.h>
 #include <ncurses.h>
 #include <string.h>
@@ -70,7 +69,7 @@ void scene_one(character *person) {
 }
 
 void shop_scene_one(character *person) {
-  char *options[] = {"[b] => buy some gold", "[s] => sell some gold", "[l] => leave and go back", 0x0};
+  char *options[] = {"[b] => buy some gold", "[s] => sell some gold", "[t] => sell gold and pay tax on it", "[c] => buy gold and pay tax on it", "[l] => leave and go back", 0x0};
   clear();
   game_message("You walk into a poorly lit shop. Dust and spiders are scattered against the red brick walls", -4);
   game_message("A woman of below average height, with long, tangled blonde hair tied poorly into a bun stairs at you, with an uncanny smile.", -3);
@@ -80,18 +79,20 @@ void shop_scene_one(character *person) {
     switch(game_options(options, 2)) {
     case 'b':
       clear();
-      if(person->liquid == 0) {
+      if(person->liquid < GOLD_VALUE) {
 	game_message("\"Well I would just love to sell you some,\" she says, in a slow, almost monotone voice,", -3);
       game_message("\"But you just can't afford any.\".", -2);
       } else {
 	game_message("Buys gold.", -2);
 	//buy_gold(person);
       } getch();
+      clear();
       break;
       
     case 's':
       clear();
       sell_gold(person);
+      clear();
       break;
 
     case 'l':

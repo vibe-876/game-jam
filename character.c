@@ -5,5 +5,5 @@
 
 void doTax(character *person) {
   if(person == 0x0) return;
-  person->liquid -= (person->liquid / person->tax);
+  person->liquid = person->liquid - (person->liquid * person->tax / 100);
 }

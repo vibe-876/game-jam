@@ -29,8 +29,7 @@ void one_intro() {
   game_message("But before long, it hits him -- with all of the money he's been making, the tax-man is sure to he hot on his tail...", -6);
   game_message("This is the story of his great escape.", -5);
   
-  getch();
-  clear();
+  sbreak;
 }
 
 void scene_one(character *person) {
@@ -48,8 +47,7 @@ void scene_one(character *person) {
       clear();
       game_message("If only you had some money to do so.", -4);
       game_message("Unfortunately, all of the money that you couldn't spend on gold has gone to the university, because cost of living crisis or something.", -3);
-      getch();
-      break;
+      sbreak;
 
     case 'g':
       shop_scene_one(person);
@@ -58,8 +56,7 @@ void scene_one(character *person) {
     case 'n':
       clear();
       game_message("HMRC will be soon upon his tail...", -8);
-      getch();
-      break;
+      sbreak;
 
     case 'w':
       goto no_money;

@@ -39,8 +39,7 @@ void title_screen() {
       game_message("And a special thanks to:", -2);
       game_message("Coffee, for giving us energy.", -1);
       
-      getch();
-      break;
+      sbreak;
       
     case 'p':
       launch_one();
@@ -57,9 +56,8 @@ void title_screen() {
       game_message("If the screen stay on a single thing without any options, just whack a random key.", -1);
 
       game_message("Regrettably, the telnet part of Tax Evasion Over Telnet doesn't work, but who actually cares lol.", 2);
-      getch();
-      
-      break;
+
+      sbreak;
       
     default:
       break;

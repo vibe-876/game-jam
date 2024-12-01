@@ -14,7 +14,7 @@ game_message("hello, world!", -2);
 This syntax of (thing, offset) is in basically all of these functions (actually all of them until I write some more docs).
 
 
-game\_options takes a list of strings (ie char\*\*) that **must** end with 0x0 or some equivalent -- and if you forget that the whole thing segfaults lol (I have good design skills I promise) -- and some offset (the same as game_message).
+game\_options takes a list of strings (ie char\*\*) that **must** end with 0x0 or some equivalent -- and if you forget that the whole thing segfaults lol (I have good design skills I promise) -- and some offset (the same as game\_message).
 
 It prints out each of these string on a newline, with the left of each aligned, and then takes some char as an input, which it then returns. The intended use for this is to create multiple choice menus, but I have this strange feeling that some other things can be done with it too...
 

@@ -17,8 +17,9 @@ void title_screen() {
     attron(A_BOLD);
     game_message("Tax Evasion Over Telnet!", -6);
     attroff(A_BOLD);
+    game_message("exploring the wonders of tax evasion", -5);
   
-    switch(mode[0] = game_options(options, -4)) {
+    switch(mode[0] = game_options(options, -3)) {
     case 'c':
       clear();
   

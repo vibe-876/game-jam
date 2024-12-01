@@ -5,6 +5,9 @@ void title_screen();
  */
 #define GOLD_VALUE 5
 
+#define sbreak getch();break;
+
+
 void game_message(char *message, signed int line);
 void fullscreen_message(char *message, signed int line);
 char game_options(char **options, signed int offset);

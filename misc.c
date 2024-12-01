@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <errno.h>
 
 
 void game_message(char *message, signed int line) {
@@ -18,6 +17,11 @@ void fullscreen_message(char *message, signed int line) {
   getch();
 }
 
+/* No checking is done to see if the
+ * char given is a valid one for the
+ * given set of options, as that should
+ * be handled by an external switch statment.
+ */
 char game_options(char **options, signed int offset) {
   int row, col;
   
@@ -31,7 +35,13 @@ char game_options(char **options, signed int offset) {
 
   return(getch());
 }
-  
+
+/* I should probably add an additional argument
+ * to change the row the "image" starts in.
+ *
+ * I might do that later, or I might sleep, who
+ * knows.
+ */
 int game_img(char *filename) {
   int offset = 10;
   char art_line[64];
@@ -42,6 +52,10 @@ int game_img(char *filename) {
     return(-1);
   }
 
+  /* Don't know if fgets automatically adds 0x0
+   * to the end, so just being safe. Feel free
+   * to change to 64 if you know it's safe.
+   */
   while(fgets(art_line, 63, art) != 0x0) {
     game_message(art_line, offset);
     offset++;

@@ -1,3 +1,6 @@
+/* Maybe move this entire file over to
+ * main.c? It's just one function.
+ */
 #include "main.h"
 #include <ncurses.h>
 #include <string.h>

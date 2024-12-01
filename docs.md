@@ -36,11 +36,16 @@ default:
 ```
 This function will not check if the returned value is one of the options, you should do all validation within your switch statement.
 
+Also, note that inside these switch statments, it will often be better to use the sbreak macro instead of just break, because sbreak will also prompt for a character, making it so that the screen can be held until the user wants to go to the next thing.
+``` c
+#define sbreak getch();break;
+```
+sbreak is defined in main.h, like everything else.
 
 game\_img takes some filename, and just writes it to the screen, starting at offset (its second argument). Be careful, because it is a bit of an ascii purist, and doesn't seem to like non-ascii chars, but who knows, I might have just misconfigured my terminal.
 
 ## Money Functions
-In character.h and character.c files.
+In main.h and character.c files.
 
 People are implemented by the person_struct structure, which is typedef-ed to person for convince -- the implementation is shown below.
 ``` c

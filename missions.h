@@ -5,3 +5,4 @@
 int launch_one();
 void one_intro();
 void scene_one();
+void shop_scene_one(character *person);

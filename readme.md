@@ -6,7 +6,7 @@ You can live out all of your tax evading fantasies, all from the comfort of your
 ## Documentation
 All documentation can be found [here](./docs.md).
 
-We also have something of a plan, which is [here](.game_notes.md).
+We also have something of a plan, which is [here](./game_notes.md).
 
 ## Building & Running
 Very simple, just enter your shell and run make with no arguments, which, compiles it, and then run the binary; the binary will be called "tax\_evasion\_over\_telnet". If you want something else, just edit the "COUT" variable in the makefile.

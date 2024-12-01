@@ -28,11 +28,11 @@ char *option_msg[] = {"[a] => do thing a", "[b] => do thing b", "[c] => you get 
  */
 switch(game_options(option_msg, 6)) {
 case 'a':
-  thing a
+  // thing a
 case 'b':
-  thing b
+  // thing b
 default:
-  bla bla bla
+  // bla bla bla
 ```
 This function will not check if the returned value is one of the options, you should do all validation within your switch statement.
 

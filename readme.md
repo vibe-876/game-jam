@@ -12,5 +12,5 @@ Very simple, just enter your shell and run make with no arguments, which, compil
 You'll need to have:
 - gcc
 - make
-- a libc
+- glibc (you could you something else, but we haven't tested it)
 - ncurses

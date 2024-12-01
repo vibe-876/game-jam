@@ -19,20 +19,18 @@ void fullscreen_message(char *message, signed int line) {
 }
 
 int game_img(char *filename) {
-  signed int line = 10;
+  int offset = 10;
   char art_line[64];
   FILE *art;
-
-  art = fopen(filename, "r");
-
-  if(art == 0x0) {
-    fprintf(stderr, "cannot open image file!");
+  
+  if((art = fopen(filename, "r")) == 0x0) {
+    fullscreen_message("cannot open image file!", 0);
     return(-1);
   }
 
   while(fgets(art_line, 63, art) != 0x0) {
-    game_message(art_line, line);
-    line++;
+    game_message(art_line, offset);
+    offset++;
   }
 
   return(0);

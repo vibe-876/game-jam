@@ -5,7 +5,7 @@
 
 int launch_one() {
   one_intro();
-
+  scene_one();
   return(0);
 }
 
@@ -21,4 +21,15 @@ void one_intro() {
   
   getch();
   clear();
+}
+
+void scene_one() {
+  char *options[] = {"[b] => buy gold", "[s] => sell gold", 0x0};
+  option_maker(option);
+  
+  clear();
+  
+  option[0] = game_options(options, 0);
+  game_message(option, -15);
+  getch();
 }

@@ -1,10 +1,10 @@
 # The Much Awaited Documentation!
 Documentation is for nerds, all of the cool people like me just read the assembler output and figure it out from there.
 
-On a more serious note, this is meant to be read alongside the header file, and if that's not enough, the source code. Unless otherwise noted, all of these are declared in the main.h header file.
+On a more serious note, this is meant to be read alongside the header file, which should be easy to find.
 
 ## Useful Functions
-All of these are implemented in the misc.c source file.
+All of these are implemented in the misc.c source file, and are declared in the main.h header.
 
 
 game\_message is used for writting messages to the screen. It takes 2 arguments: a string (ie char\*) to be displayed, and a displacement from the middle column given as a signed int. For example, to write "hello, world!" 2 rows above the centre of the screen, it would be
@@ -38,3 +38,19 @@ This function will not check if the returned value is one of the options, you sh
 
 
 game\_img takes some filename, and just writes it to the screen, starting at offset (its second argument). Be careful, because it is a bit of an ascii purist, and doesn't seem to like non-ascii chars, but who knows, I might have just misconfigured my terminal.
+
+## Money Functions
+In character.h and character.c files.
+
+The only one so far is doTax, which takes a pointer to some character as its only argument. It deducts taxes from the character. For example, taking the taxes from someone called coffee would be done as
+``` c
+person *coffee = malloc(sizeof(person));
+// Give coffee their values here.
+doTax(coffee);
+```
+Or, if you for some reason prefer your stuff on the stack:
+``` c
+person coffee;
+// Give coffee their gross stack values.
+doTax(&coffee);
+```
